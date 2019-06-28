@@ -100,7 +100,7 @@ private:
                 unsigned x, y, w, h;
                 
                 std::tie(newQuad, x, y, w, h) = getQuadrant(X, Y);
-                if (newQuad == nullptr) {
+                if (*newQuad == nullptr) {
                     *newQuad = new Node(new data_elem_t(Item, X, Y), x, y, w, h);
                 } else {
                     (*newQuad)->insert(Item, X, Y);
@@ -173,6 +173,7 @@ int main()
     qt.insert(0, 10, 10);
     qt.insert(0, 90, 90);
     qt.insert(1, 80, 80);
+    qt.insert(2, 80, 90);
     qt.print();
 
     return 0;
